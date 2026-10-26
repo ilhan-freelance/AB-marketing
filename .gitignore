@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+package-lock.json.backup
+
+# Production Build
+dist/
+
+# Large screen recording videos (>100MB exceeds GitHub limit)
+*.mp4
+
+# Temporary scratch folder
+scratch/
+
+# Environment and IDE files
+.env
+.env.local
+.DS_Store
+Thumbs.db
