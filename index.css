@@ -780,44 +780,45 @@ ul {
 
 .cinematic-floating-title {
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.25;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .cft-wel {
-  font-family: var(--font-heading);
-  font-size: clamp(1.15rem, 2.4vw, 1.65rem);
-  font-weight: 700;
-  letter-spacing: 0.32em;
+  font-family: 'Plus Jakarta Sans', var(--font-body);
+  font-size: clamp(0.8rem, 1.2vw, 0.98rem);
+  font-weight: 600;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: #f8fafc;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+  color: rgba(248, 250, 252, 0.92);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  margin-left: 0.38em;
 }
 
 .cft-brand {
-  font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5.6vw, 4.4rem);
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  font-family: 'Syne', var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 35%, #d8b4fe 65%, #fbbf24 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 30%, #e9d5ff 60%, #fef08a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 4px 28px rgba(126, 25, 157, 0.6)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 3px 18px rgba(126, 25, 157, 0.45)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));
 }
 
 .cft-accent-bar {
-  width: 90px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #c084fc 40%, #fbbf24 70%, transparent);
-  margin: 14px auto 0 auto;
-  border-radius: 3px;
-  box-shadow: 0 0 14px rgba(192, 132, 252, 0.7);
+  width: 54px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 254, 0.85) 50%, transparent);
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
 }
 
 @media (max-width: 768px) {
