@@ -744,8 +744,19 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(10, 5, 20, 0.08) 0%, rgba(10, 5, 20, 0) 50%, rgba(10, 5, 20, 0.45) 100%);
+  background: linear-gradient(180deg, rgba(10, 5, 20, 0.12) 0%, rgba(10, 5, 20, 0) 45%, rgba(10, 5, 20, 0.45) 100%);
   z-index: 3;
+}
+
+.hero-depth-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(8, 4, 18, 0) 0%, rgba(8, 4, 18, 0.45) 50%, rgba(8, 4, 18, 0.88) 100%);
+  z-index: 4;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -927,119 +938,264 @@ ul {
 }
 
 /* ============================================================
-   WELCOME, STATS & CTA SECTION (Just Below Hero Image)
+   PRESTIGE GLASSMORPHI OVERLAP BRIDGE SECTION
    ============================================================ */
-.welcome-stats-cta-section {
+.prestige-bridge-section {
   position: relative;
-  z-index: 5;
-  padding: 55px 0 65px 0;
+  z-index: 10;
+  padding: 0 0 65px 0;
   background: var(--white);
-  border-bottom: 1px solid rgba(126, 25, 157, 0.08);
 }
 
-.welcome-heading-wrapper {
-  margin-bottom: 38px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.prestige-overlap-card {
+  margin-top: -115px; /* Elegantly bridges across hero image and page */
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 32px;
+  padding: 42px 48px 46px 48px;
+  box-shadow: 
+    0 32px 75px -15px rgba(126, 25, 157, 0.16),
+    0 12px 28px -6px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.welcome-main-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.25;
+/* Luxury accent gradient line at top of card */
+.prestige-overlap-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 3.5px;
+  background: linear-gradient(90deg, transparent, #7E199D 30%, #f59e0b 70%, transparent);
+  border-radius: 4px;
+}
+
+/* 1. Header */
+.prestige-header {
+  max-width: 860px;
+  margin: 0 auto 36px auto;
+  text-align: center;
+}
+
+.prestige-pre-badge {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(126, 25, 157, 0.07);
+  border: 1px solid rgba(126, 25, 157, 0.16);
+  border-radius: 100px;
+  padding: 6px 18px;
+  margin-bottom: 16px;
+}
+
+.prestige-pre-badge .badge-gem {
+  color: #7E199D;
+  font-size: 0.65rem;
+}
+
+.prestige-pre-badge .badge-text {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #7E199D;
+  text-transform: uppercase;
+}
+
+.prestige-welcome-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  gap: 8px 14px;
 }
 
-.welcome-star {
-  font-size: 1.05em;
-  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.45));
-  animation: starShimmer 3s ease-in-out infinite alternate;
-  display: inline-block;
-}
-
-@keyframes starShimmer {
-  0% { transform: scale(1) rotate(0deg); opacity: 0.9; }
-  100% { transform: scale(1.15) rotate(6deg); opacity: 1; }
-}
-
-.welcome-text-light {
+.prestige-welcome-headline .p-wel {
   color: #0f172a;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
-.welcome-text-brand {
-  background: linear-gradient(135deg, #7E199D 0%, #a855f7 50%, #f59e0b 100%);
+.prestige-welcome-headline .p-brand {
+  background: linear-gradient(135deg, #7E199D 0%, #9d25c5 45%, #c026d3 70%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  position: relative;
+  filter: drop-shadow(0 2px 14px rgba(126, 25, 157, 0.2));
 }
 
-.welcome-subline-accent {
+.prestige-sub-tagline {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: #475569;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 2. Integrated 4 Stat Pillars */
+.prestige-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(250, 247, 253, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1.5px solid rgba(126, 25, 157, 0.12);
+  border-radius: 22px;
+  padding: 30px 24px;
+  margin-bottom: 34px;
+  box-shadow: 0 8px 24px rgba(126, 25, 157, 0.04);
+}
+
+.p-stat-item {
+  text-align: center;
+  border-right: 1px solid rgba(126, 25, 157, 0.12);
+  padding: 0 12px;
+}
+
+.p-stat-item:last-child {
+  border-right: none;
+}
+
+.p-stat-num-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.p-stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 3.2vw, 3rem);
+  font-weight: 800;
+  color: #7E199D;
+  line-height: 1;
+}
+
+.p-stat-plus {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 800;
+  color: #d97706;
+  margin-left: 2px;
+}
+
+.p-stat-label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.01em;
+}
+
+/* 3. Dual Action CTAs */
+.prestige-actions-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.welcome-subline-accent .accent-line {
-  width: 90px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #7E199D 30%, #f59e0b 70%, transparent);
-  border-radius: 2px;
-}
-
-.welcome-subline-accent .accent-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #7E199D;
-  opacity: 0.75;
-}
-
-.welcome-cta-group {
-  margin-top: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.btn-outline-purple-pill {
+.btn-prestige-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  color: var(--primary-purple) !important;
-  border: 2px solid var(--primary-purple);
+  gap: 10px;
+  background: linear-gradient(135deg, #7E199D 0%, #5b0e73 100%);
+  color: #ffffff !important;
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 13px 32px;
-  border-radius: var(--radius-pill);
-  transition: var(--transition-smooth);
+  padding: 15px 36px;
+  border-radius: 100px;
+  box-shadow: 0 10px 28px rgba(126, 25, 157, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-outline-purple-pill:hover {
-  background: var(--primary-purple);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(126, 25, 157, 0.25);
+.btn-prestige-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(126, 25, 157, 0.48);
+  background: linear-gradient(135deg, #9322b6 0%, #681183 100%);
+}
+
+.btn-prestige-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #7E199D !important;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px 36px;
+  border-radius: 100px;
+  border: 2px solid rgba(126, 25, 157, 0.25);
+  box-shadow: 0 4px 16px rgba(126, 25, 157, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-prestige-secondary:hover {
+  transform: translateY(-3px);
+  border-color: #7E199D;
+  background: rgba(126, 25, 157, 0.04);
+  box-shadow: 0 10px 24px rgba(126, 25, 157, 0.16);
+}
+
+/* Responsive Overlap Adjustments */
+@media (max-width: 992px) {
+  .prestige-overlap-card {
+    margin-top: -80px;
+    padding: 34px 28px;
+  }
+  .prestige-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .p-stat-item:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .prestige-overlap-card {
+    margin-top: -50px;
+    padding: 26px 18px;
+    border-radius: 22px;
+  }
+  .prestige-stats-row {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+  .p-stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(126, 25, 157, 0.1);
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+  .p-stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .prestige-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-prestige-primary, .btn-prestige-secondary {
+    width: 100%;
+  }
 }
 
 .stats-section {
