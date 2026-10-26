@@ -2857,33 +2857,51 @@ ul {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+  width: 62px;
+  height: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.42), 0 2px 8px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
   z-index: 999;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
 }
 
 .floating-wa-btn:hover {
-  transform: scale(1.08);
-  background: #20BA5A;
-  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.58), 0 4px 12px rgba(0, 0, 0, 0.22);
+  transform: scale(1.12);
+}
+
+.floating-wa-img {
+  width: 62px;
+  height: 62px;
+  display: block;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.32)) drop-shadow(0 2px 6px rgba(37, 211, 102, 0.45));
+  transition: filter 0.3s ease;
+}
+
+.floating-wa-btn:hover .floating-wa-img {
+  filter: drop-shadow(0 10px 24px rgba(37, 211, 102, 0.65)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
 }
 
 .wa-ripple {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 2px solid rgba(37, 211, 102, 0.65);
   animation: waPulse 2s infinite;
   pointer-events: none;
+  z-index: -1;
+}
+
+.wa-icon-inline {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 @keyframes waPulse {
